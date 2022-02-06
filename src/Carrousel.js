@@ -1,12 +1,13 @@
 import './Carrousel.css';
 import images from './images/images';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 
 function Carrousel(){
 
-    let i = 0;
-    let value = 0;
+    let id = 0;
+    const[value, setValue] = useState(0);
+    const[oldValue, setOld] = useState(0);
 
     useEffect(()=>{
 
@@ -14,7 +15,13 @@ function Carrousel(){
         
         const preImages = Array.from(document.getElementsByClassName("galleryImg"));
         console.log(preImages);
-        
+        preImages.map(img=>{
+            console.log(img.getAttribute("value"));
+            const value = img.getAttribute("value");
+            img.setAttribute("onClick", selectImage(value, oldValue))
+            console.log(img);
+        })
+
         }, []) 
             
 
@@ -30,13 +37,14 @@ function Carrousel(){
                 <i className="fas fa-chevron-circle-left arrow" onClick={moveLeft}></i>
                 </div>
                 <div className='preImages'>
-                {images.map((img) => {return <img 
+                {images.map((img) => {
+                        return <img 
                                     src={img} 
                                     alt="" 
-                                    key={i}
-                                    id={i}
+                                    key={id}
+                                    id={id}
                                     name="image"
-                                    value = {i++}
+                                    value = {id++}
                                     className="galleryImg"
                                     />})
                 }
@@ -52,11 +60,13 @@ function Carrousel(){
     );
 
 
-    function selectImage(newValue, oldValue){
+    function selectImage(newValue, oldVal){
 
-        value = newValue;
-        console.log(value);
-        console.log(oldValue);
+        setValue(newValue);
+        setOld(oldVal);
+
+       /*  console.log(value);
+        console.log(oldValue); */
 
         const div = document.getElementById("bigImageDiv");
 
