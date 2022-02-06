@@ -9,9 +9,9 @@ function App(){
     return (
         <Router>
             <Routes>
-                <Route exact path='animal-curiosity/' element={<DailyFact/>}/>
-                <Route exact path='animal-curiosity/about-us' element={<AboutUs/>}/>
-                <Route exact path='animal-curiosity/gallery' element={<Gallery/>}/>
+                <Route path='animal-curiosity/' element={<DailyFact/>}/>
+                <Route path='animal-curiosity/about-us' element={<AboutUs/>}/>
+                <Route path='animal-curiosity/gallery' element={<Gallery/>}/>
                 <Route path='*' element={<NotFound/>}/>
             </Routes>
         </Router>
