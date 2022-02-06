@@ -1,0 +1,79 @@
+.bodyContainer {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #efefef;
+}
+
+
+.bodyMain, .secondBody {
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction:  column;
+    background: transparent;
+    font-family: 'Nunito';
+}
+
+.img {
+    max-width: 750px;
+    max-height: 445px;
+    object-fit: cover;
+    margin: 0 auto;
+    margin-top: 50px 
+}
+
+.title, .secondTitle  {
+    margin-top: 110px;
+    font-size: 40px;
+}
+
+.margin{
+    margin-bottom: 20px;
+}
+
+
+
+@media only screen and (max-width: 1500px){
+    .title {
+        margin-top: 100px;
+        font-size: 30px;
+    }
+
+    .content {
+        margin: 0;
+    }
+
+    .img {
+        margin-top: 30px;
+        width: 600px;
+        height: 350px;
+    }
+
+    .secondTitle {
+        padding-top: 60px;
+        font-size: 30px;
+    }
+
+    .secondContent {
+        margin-bottom: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 900px){
+    .secondTitle  {
+        padding: 0;
+        margin-top: 0;
+    }
+    .bodyMain, .secondBody {
+        width: 800px;
+    }
+
+    .content {
+        font-size: 14px;
+    }
+
+}

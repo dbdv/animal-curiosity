@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AboutUs from './AboutUs';
+import NotFound from './NotFound';
+import DailyFact from './DailyFact';
+import Gallery from './Gallery';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+    return (
+        <Router>
+            <Routes>
+                <Route exact path='/' element={<DailyFact/>}/>
+                <Route exact path='/about-us' element={<AboutUs/>}/>
+                <Route exact path='/gallery' element={<Gallery/>}/>
+                <Route path='*' element={<NotFound/>}/>
+            </Routes>
+        </Router>
+    )
 }
 
 export default App;

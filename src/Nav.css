@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;600;700');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+
+
+.nav {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    background: green;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.pageName {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    background: /* #A9BF5A */black;
+}
+
+.pageLogo {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    text-decoration: none;
+    margin-left: 100px;
+}
+
+.logo {
+    font-size: 50px;
+    color: #547421;
+}
+
+.logoName {
+    text-align: center;
+    font-family: 'Yellowtail', cursive;
+    font-size: 60px;
+    font-weight: bold;
+    color: #547421;
+    width: 380px;
+}
+
+.buttons {
+    background: black;
+    width: 50%;
+    display: grid;
+}
+
+.buttonsUl {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.button {
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px; 
+    margin-left: 20px;
+    text-transform: uppercase;
+    color: darkgray;
+    border-radius: 10px;
+}
+
+.button:visited {
+    color: darkgray;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: white;
+    font-size: 28px;
+    /* background: white; */
+    transition: .5s;
+}
+
+/*Mobile*/
+
+.menuIconDiv{
+    display: none;
+}
+
+.buttonsMobile {
+    display: flex;
+}
+
+.ulMobile{
+    display: flex;
+    margin-left: 100%;
+    margin-bottom: 100%;
+    margin-top: 0;
+    position: fixed;
+    width: 0;
+    height: 0;
+    flex-direction: column;
+    list-style-type: none;
+    background: black;
+    align-items: left;
+    justify-content: center;
+    transition: .5s;
+}
+
+.buttonMb{
+    margin-left: 230px;
+    padding: 1px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: transparent;
+    transition: .1s;
+}
+
+.buttonMb:visited {
+    color: #547421;
+}
+
+.ulActive{
+    transition: .5s;
+    width: 100%;
+    height: 100px;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-top: 60px;
+}
+
+.buttonOn{
+    transition: 1.5s;
+    color: #547421;
+}
+
+@media only screen and (max-width: 1500px){
+
+    .nav {
+        height: 80px;
+    }
+    .logoName {
+        font-size: 50px;
+        width: 330px;
+    }
+
+    .button {
+        font-size: 20px;
+    }
+
+    .button:hover {
+        font-size: 21px;
+    }
+}
+
+@media only screen and (max-width: 1080px){
+    .nav {
+        background: black;
+        height: 60px;
+        justify-content: space-between;
+    }
+
+    .pageName {
+        width: 70%;
+        justify-content: center;
+    }
+
+    .pageLogo {
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+    
+    .logo {
+        font-size: 40px;
+        color: #547421;
+    }
+
+    .logoName {
+        text-align: center;
+        font-family: 'Yellowtail', cursive;
+        font-size: 40px;
+        font-weight: bold;
+        color: #547421;
+        width: 250px;
+    }
+
+    .menuIconDiv{
+        display: flex;
+        width: 10%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .iconMb{
+        color: #547421;
+        font-size: 25px;
+    }
+
+    .iconMb:hover{
+        cursor: pointer;
+    }
+
+    .buttons{
+        display: none;
+    }
+
+    .buttonsMobile{
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 1080px){
+    .nav {
+        background: black;
+        height: 60px;
+        justify-content: space-between;
+    }
+
+    .pageName {
+        width: 70%;
+        justify-content: center;
+    }
+
+    .pageLogo {
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+    
+    .logo {
+        font-size: 40px;
+        color: #547421;
+    }
+
+    .logoName {
+        text-align: center;
+        font-family: 'Yellowtail', cursive;
+        font-size: 40px;
+        font-weight: bold;
+        color: #547421;
+        width: 250px;
+    }
+
+    .menuIconDiv{
+        display: flex;
+        width: 10%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .iconMb{
+        color: #547421;
+        font-size: 25px;
+    }
+
+    .iconMb:hover{
+        cursor: pointer;
+    }
+
+    .buttons{
+        display: none;
+    }
+
+    .buttonsMobile{
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .buttonMb{
+        margin-left: 60px;
+        font-size: 20;
+    }
+}

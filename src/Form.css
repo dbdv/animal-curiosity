@@ -1,0 +1,121 @@
+.formBody {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #efefef;
+    font-family: 'Nunito';
+}
+
+
+.formMain {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    background: transparent;
+    flex-wrap: wrap;
+}
+
+.form {
+    margin: auto;
+    min-width: 320px;
+    max-width: 800px;
+    height: 200px;
+    max-height: 240px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: transparent;
+}
+
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+}
+ 
+.input {
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #ceddb6;
+    margin: 5px 10px;
+    background: transparent;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0 10px;
+    height: 130px;
+}
+
+.textArea {
+    border: none;
+    border: 1px solid #ceddb6;
+    padding: 5px;
+    width: 400px;
+    height: 100px;
+    resize: none;
+    background: transparent;
+}
+
+.submit {
+    width: 80px;
+    height: 30px;
+    background: #ceddb6;
+    border: none;
+    border-radius: 10px;
+    color: #fed;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Nunito Sans";
+} 
+
+.submit:hover {
+    transition: .1s;
+    border: none;
+    cursor: pointer;
+    color: black;
+    background: #efefef;
+    border: 2px solid white;
+}
+
+@media only screen and (max-width: 1500px){
+    .form {
+        height: 350px;
+    }
+
+    .label {
+        font-size: 15px;
+        padding: 4px;
+    }
+
+    .input {
+        min-width: 150px;
+        max-width: 200px;
+    }
+
+    .textArea {
+        width: 400px;
+        height: 150px;
+    }
+
+    .submit {
+        width: 70px;
+        font-size: 15px;
+        margin-left: 80%;
+        padding: 1px;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .formMain {
+        height: auto;
+    }
+}
