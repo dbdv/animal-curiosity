@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/animal-curiosity/static/css/main.218e83db.css",
+    "main.css": "/animal-curiosity/static/css/main.60f72332.css",
     "main.js": "/animal-curiosity/static/js/main.dc064810.js",
     "static/media/img3.jpg": "/animal-curiosity/static/media/img3.c1f1076a0ca3a0d72dbe.jpg",
     "static/media/img1.jpg": "/animal-curiosity/static/media/img1.e8427bdeae6f9f621be0.jpg",
@@ -12,11 +12,11 @@
     "static/media/img7.jpg": "/animal-curiosity/static/media/img7.95fc0769d32fe08c0c01.jpg",
     "static/media/hi.jpg": "/animal-curiosity/static/media/hi.83c5041f2524fd6157ce.jpg",
     "index.html": "/animal-curiosity/index.html",
-    "main.218e83db.css.map": "/animal-curiosity/static/css/main.218e83db.css.map",
+    "main.60f72332.css.map": "/animal-curiosity/static/css/main.60f72332.css.map",
     "main.dc064810.js.map": "/animal-curiosity/static/js/main.dc064810.js.map"
   },
   "entrypoints": [
-    "static/css/main.218e83db.css",
+    "static/css/main.60f72332.css",
     "static/js/main.dc064810.js"
   ]
 }
