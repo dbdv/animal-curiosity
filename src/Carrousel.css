@@ -169,7 +169,8 @@
     .galleryImg:hover, .arrow:hover {
         cursor: none;
         font-size: 3rem;
-        transition: none;
+        transition: .1s;
+        transition-duration: .5s;
     }
 
     .galleryImg:hover {
