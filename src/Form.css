@@ -51,7 +51,6 @@
 .message {
     display: flex;
     flex-direction: column;
-    align-content: flex-end;
     margin: 0 10px;
     height: 130px;
     width: 100%;
@@ -111,7 +110,6 @@
     .submit {
         width: 70px;
         font-size: 15px;
-        margin-left: 80%;
         padding: 1px;
     }
 }
@@ -169,7 +167,6 @@
     }
 
     .submit {
-        margin-left: 83%;
         height: 40px;
         font-size: 18px;
     }

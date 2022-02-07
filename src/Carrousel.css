@@ -137,43 +137,90 @@
 }
 
 @media only screen and (max-width: 700px){
+
+    .inner{
+        width: 100%;
+    }
+
     .bigImageDiv {
         height: 30%;
     }
     .bigImage {
-        width: 375px;
-        height: 224.5px;
+        width: 95%;
+        height: auto;
+        max-height: 320px;
+    }
+
+    .preview {
+        width: 95%;
     }
     
     .galleryImg {
         border: none;
         margin: 0 1px;
-        width: 40px;
-        height: 40px;
+        width: 11%;
+        height: 3rem;
     }
 
     .arrow {
-        font-size: 25px;
+        font-size: 2.5rem;
     }
 
     .galleryImg:hover, .arrow:hover {
         cursor: none;
-        font-size: 25px;
+        font-size: 3rem;
         transition: none;
     }
 
     .galleryImg:hover {
-        width: 40px;
-        height: 40px;
+        width: 18%;
+        height: 4rem;
         border: none;
-        opacity: 50%;
+        opacity: 100%;
     }
 
     .selected {
         margin: 0;
         padding: 0;
-        width: 60px;
-        height: 60px;
+        width: 18%;
+        height: 4rem;
+        border: 3px solid #547421;
+        border-radius: 15px;
+        opacity: 100%;
+        transition: .1s;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .galleryImg {
+        border: none;
+        margin: 0 1px;
+        width: 15%;
+        height: 2rem;
+    }
+
+    .arrow {
+        font-size: 2rem;
+    }
+
+    .galleryImg:hover, .arrow:hover {
+        cursor: none;
+        font-size: 2.1rem;
+        transition: none;
+    }
+
+    .galleryImg:hover {
+        width: 25%;
+        height: 3rem;
+        border: none;
+        opacity: 100%;
+    }
+
+    .selected {
+        margin: 0;
+        padding: 0;
+        width: 25%;
+        height: 3rem;
         border: 3px solid #547421;
         border-radius: 15px;
         opacity: 100%;
