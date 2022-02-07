@@ -18,8 +18,8 @@
 }
 
 .img {
-    max-width: 750px;
-    max-height: 445px;
+    width: 750px;
+    height: 445px;
     object-fit: cover;
     margin: 0 auto;
     margin-top: 50px 
