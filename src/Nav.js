@@ -6,7 +6,7 @@ function Nav() {
     <div /*  className="navContainer" */>
       <div className="nav">
         <div className="pageName">
-          <Link to="/" className="pageLogo">
+          <Link to="/animal-curiosity/" className="pageLogo">
             <i className="fas fa-paw logo"></i>
             <h1 className="logoName">Animal Curiosity</h1>
           </Link>
@@ -35,17 +35,17 @@ function Buttons() {
   return (
     <ul className="buttonsUl">
       <li>
-        <Link to="/" className="button">
+        <Link to="/animal-curiosity/" className="button">
           daily fact
         </Link>
       </li>
       <li>
-        <Link to="/about-us" className="button">
+        <Link to="/animal-curiosity/about-us" className="button">
           about us
         </Link>
       </li>
       <li>
-        <Link to="/gallery" className="button">
+        <Link to="/animal-curiosity/gallery" className="button">
           gallery
         </Link>
       </li>
@@ -57,17 +57,17 @@ function ButtonsMobile() {
   return (
     <ul className="ulMobile" id="ulMobile">
       <li>
-        <Link to="/" className="buttonMb">
+        <Link to="/animal-curiosity/" className="buttonMb">
           daily fact
         </Link>
       </li>
       <li>
-        <Link to="/about-us" className="buttonMb">
+        <Link to="/animal-curiosity/about-us" className="buttonMb">
           about us
         </Link>
       </li>
       <li>
-        <Link to="/gallery" className="buttonMb">
+        <Link to="/animal-curiosity/gallery" className="buttonMb">
           gallery
         </Link>
       </li>
