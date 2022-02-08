@@ -212,9 +212,9 @@
     }
 
     .galleryImg:hover {
-        width: 25%;
-        height: 3rem;
-        border: none;
+        width: 4rem;
+        height: 4rem;
+        border: 3px solid #547421;
         opacity: 100%;
     }
 
