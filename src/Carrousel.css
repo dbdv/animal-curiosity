@@ -196,11 +196,12 @@
     .galleryImg {
         border: none;
         margin: 0 1px;
-        width: 15%;
-        height: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
 
     .arrow {
+        display: none;
         font-size: 2rem;
     }
 
@@ -220,8 +221,8 @@
     .selected {
         margin: 0;
         padding: 0;
-        width: 25%;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
         border: 3px solid #547421;
         border-radius: 15px;
         opacity: 100%;
