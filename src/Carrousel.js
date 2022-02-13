@@ -2,119 +2,82 @@ import "./Carrousel.css";
 import images from "./images/images";
 import React from "react";
 
-class Carrousel extends React.Component {
-  state = {
-    value: 0,
-    oldValue: 0,
-    id: 0,
-  };
-  setState = {
-    value: 0,
-    oldValue: 0,
-    id: 0,
-  };
+export default function Carrousel() {
+  const [idSelected, setIdSelected] = React.useState(0);
+  let key = 0;
 
-  handleClick = (newValue, oldVal) => {
+  React.useEffect(() => {
+    console.log(idSelected)
+    const img = document.getElementById(idSelected);
+    img.classList.add("selected");
+  });
 
-    this.state.value = newValue;
-    this.state.oldValue = oldVal; 
-
-    const div = document.querySelector(".bigImageDiv");
-
-    const oldImage = document.getElementById("bigImage");
-    const newImage = document.createElement("img");
-
-    const oldMniature = document.getElementById("" + this.state.oldValue);
-    const newMiniature = document.getElementById("" + this.state.value);
-
-    newImage.src = images[this.state.value];
-    newImage.alt = "";
-    newImage.className = "bigImage effect";
-    newImage.id = "bigImage";
-    newImage.value = this.state.value;
-
-    if (newMiniature != null) newMiniature.classList.toggle("selected");
-    if (oldMniature != null) oldMniature.classList.toggle("selected");
-    div.replaceChild(newImage, oldImage);
-  };
-
-  handleClickLeft = () => {
-    this.state.value > 0
-      ? this.handleClick(this.state.value - 1, this.state.value)
-      : this.handleClick(6, 0);
-  };
-
-  handleClickRight = () => {
-    this.state.value < 6
-      ? this.handleClick(this.state.value + 1, this.state.value)
-      : this.handleClick(0, 6);
-  };
-
-  clicked = (v) => {
-      if(v.target != null){
-        console.log(v.target.id);
-        if(v.target !== undefined){
-            const valueSelected = document.getElementById("bigImage").value;
-            this.handleClick(v.target.id, valueSelected === undefined ? 0 : valueSelected);
-            console.log(this.state.value, valueSelected === undefined ? 0 : valueSelected)
-        }}
-  };
-
-  componentDidMount() {
-    document.querySelector(".galleryImg").classList.add("selected");
-    const previews = document.querySelectorAll(".galleryImg");
-
-    previews.forEach((img) => {
-      if (img != null) {
-        const v = img.getAttribute("value");
-        /* console.log(img.getAttribute("value")) */
-        img.addEventListener("onClick", this.clicked(v));
-      } 
-    });
+  function handleClick(id) {
+    changeSelected(id);
+    setIdSelected(id);
   }
 
-  render() {
-    return (
-      <div className="outer">
-        <div className="inner">
-          <div className="bigImageDiv" id="bigImageDiv">
-            <img src={images[0]} alt="" className="bigImage" id="bigImage" />
-          </div>
+  function handleClickLeft() {
+    idSelected == 0 ? handleClick(6) : handleClick(idSelected - 1);
+  }
 
-          <form className="preview">
-            <div>
-              <i
-                className="fas fa-chevron-circle-left arrow"
-                onClick={this.handleClickLeft}
-              ></i>
-            </div>
-            <div className="preImages">
-              {images.map((img) => {
-                return (
-                  <img
-                    src={img}
-                    alt=""
-                    key={this.state.id}
-                    id={this.state.id}
-                    name="image"
-                    onClick={this.clicked}
-                    value={this.state.id++}
-                    className="galleryImg"
-                  />
-                );
-              })}
-            </div>
-            <div>
-              <i
-                className="fas fa-chevron-circle-right arrow"
-                onClick={this.handleClickRight}
-              ></i>
-            </div>
-          </form>
+  function handleClickRight() {
+    idSelected == 6 ? handleClick(0) : handleClick(idSelected + 1);
+  }
+
+  function changeSelected(id) {
+    const previousSeleted = document.querySelector(".selected");
+    const nowSelected = document.getElementById(id);
+
+    previousSeleted.classList.remove("selected");
+    if (nowSelected !== null) nowSelected.classList.add("selected");
+  }
+
+  return (
+    <div className="outer">
+      <div className="inner">
+        <div className="bigImageDiv" id="bigImageDiv">
+          <img
+            src={images[idSelected]}
+            alt=""
+            className="bigImage"
+            id="bigImage"
+          />
         </div>
-      </div>
-    );
-  }
-}
 
-export default Carrousel;
+        <form className="preview">
+          <div>
+            <i
+              className="fas fa-chevron-circle-left arrow"
+              onClick={handleClickLeft}
+            ></i>
+          </div>
+          <div className="preImages">
+            {images.map((img) => {
+              return (
+                <img
+                  src={img}
+                  alt=""
+                  key={key}
+                  id={key}
+                  name="image"
+                  onClick={(e) => {
+                    handleClick(e.target.id);
+                  }}
+                  value={key++}
+                  className="galleryImg"
+                />
+              );
+            })}
+          </div>
+          <div>
+            <i
+              className="fas fa-chevron-circle-right arrow"
+              onClick={handleClickRight}
+            ></i>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
