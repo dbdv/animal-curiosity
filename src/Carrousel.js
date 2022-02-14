@@ -6,31 +6,31 @@ export default function Carrousel() {
   const [idSelected, setIdSelected] = React.useState(0);
   let key = 0;
 
-  React.useEffect(() => {
-    console.log(idSelected)
-    const img = document.getElementById(idSelected);
-    img.classList.add("selected");
-  });
+  const imagesToRender = images.map((img) => (
+    <img
+      src={img}
+      alt=""
+      key={key}
+      id={key}
+      name="image"
+      className={key == idSelected ? "galleryImg selected" : "galleryImg"}
+      onClick={(e) => {
+        handleClick(e.target.id);
+      }}
+      value={key++}
+    />
+  ));
 
   function handleClick(id) {
-    changeSelected(id);
-    setIdSelected(id);
+    if (id !== idSelected) setIdSelected(id);
   }
 
   function handleClickLeft() {
-    idSelected == 0 ? handleClick(6) : handleClick(idSelected - 1);
+    setIdSelected((prevId) => (idSelected == 0 ? 6 : prevId - 1));
   }
 
   function handleClickRight() {
-    idSelected == 6 ? handleClick(0) : handleClick(idSelected + 1);
-  }
-
-  function changeSelected(id) {
-    const previousSeleted = document.querySelector(".selected");
-    const nowSelected = document.getElementById(id);
-
-    previousSeleted.classList.remove("selected");
-    if (nowSelected !== null) nowSelected.classList.add("selected");
+    setIdSelected((prevId) => (idSelected == 6 ? 0 : ++prevId));
   }
 
   return (
@@ -50,31 +50,14 @@ export default function Carrousel() {
             <i
               className="fas fa-chevron-circle-left arrow"
               onClick={handleClickLeft}
-            ></i>
+            />
           </div>
-          <div className="preImages">
-            {images.map((img) => {
-              return (
-                <img
-                  src={img}
-                  alt=""
-                  key={key}
-                  id={key}
-                  name="image"
-                  onClick={(e) => {
-                    handleClick(e.target.id);
-                  }}
-                  value={key++}
-                  className="galleryImg"
-                />
-              );
-            })}
-          </div>
+          <div className="preImages">{imagesToRender}</div>
           <div>
             <i
               className="fas fa-chevron-circle-right arrow"
               onClick={handleClickRight}
-            ></i>
+            />
           </div>
         </form>
       </div>
